@@ -1,0 +1,109 @@
+.present{   
+    min-width:320px;
+    &__title{
+        @include title(bold, 26px, 28px);        
+        margin-top: 130px;
+        color: $color-title;
+        text-transform: uppercase;       
+        text-align: center;
+
+        @media screen and (min-width:481px) and (max-width:992px){
+            @include title (bold, 42px, 42px);
+            margin-top: 156px;
+        }
+
+        @media screen and (min-width:993px){
+            @include title (bold, 54px, 54px);
+            margin-top: 129px;
+        }          
+    }
+
+    &__text{
+        @include text($font-size:14px, $line-height:20px);
+        text-align: center;
+        margin-top: 27px;
+        color: $dark-text-subtitle;
+
+        @media screen and (min-width:481px) and (max-width:992px) {
+            @include text($font-size:21px, $line-height:32px); 
+            margin: 33px auto 36px;
+            width:98%;           
+        }
+
+        @media screen and (min-width:993px) and (max-width:1200px) {
+            @include text($font-size:21px, $line-height:32px);
+            margin: 35px auto 13px;
+            width: 90%; 
+        }
+    }
+
+    //wrapper for github buttons
+
+    &__wrapper{
+        margin-top: 36px;
+        @include flex($horizontal:center);
+        flex-wrap: wrap;
+
+        @media screen and (min-width:993px){
+            margin-bottom: 70px;
+        }
+    }
+
+    &__counter{
+        @include flex;
+        margin-bottom: 20px;        
+    }
+}
+
+// button
+
+.counter{
+    font-size: 11px;
+    color: #24292e;
+    font-family: Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    line-height:1.5;
+    margin-right: 10px;
+
+    &__button{
+        @include flex(space-around);
+        padding: 3px 10px;
+        color: #24292e;
+        background-color: #eff3f6;
+        background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+        background-repeat: repeat-x;
+        background-position: -1px -1px;
+        background-size: 110% 110%;
+        border: 1px solid rgba(27,31,35,0.2);
+        border-radius: 0.25em;
+        font-size: 12px;
+        line-height: 20px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;    
+    }
+
+    &__icon{
+        color: #24292e;
+        margin-right: 2px;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: #24292e;
+        font-style: bold;
+    }
+
+    &__item{
+        text-align: center;
+        padding: 3px 10px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 20px;
+        color: #24292e;
+        vertical-align: middle;
+        background-color: #fff;
+        border: 1px solid rgba(27,31,35,0.2);
+        border-left: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+}

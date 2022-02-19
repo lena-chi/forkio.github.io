@@ -1,0 +1,29 @@
+@mixin title ( $font-weight: bold, $font-size: 48px, $line-height: 50px, ){
+  font-family: $title-fonts;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  }
+
+@mixin text ($font-style: normal, $font-weight: normal, $font-size: 11px, $line-height: 22px ){
+  font-family: $text-fonts;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin flex($horizontal: space-between, $vertical: center) {
+    display: flex;
+    justify-content: $horizontal;
+    align-items: $vertical;
+  }
+
+@mixin button($width: 119px, $padding-block: 11px, $background: $primary-color){
+  width: $width;
+  background: $background;
+  padding-block: $padding-block;
+  text-align: center;
+  border-radius: 40px;
+ }

@@ -1,0 +1,440 @@
+.header {
+  background-image: url("./images/header.png");
+  min-width: 320px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+  &_navbar {
+    box-sizing: border-box;
+    position: relative;
+    @include flex;
+    &__logo {
+      @include flex;
+      column-gap: 17px;
+
+      &-title {
+        font-family: $text-fonts;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 16px;
+        color: $primary-color;
+        text-transform: uppercase;
+        display: none;
+      }
+    }
+    &__button {
+      &-text {
+        font-family: $title-fonts;
+        font-style: normal;
+        font-weight: bold;
+        color: $primary-light;
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+    }
+    &__menu {
+      display: none;
+    }
+  }
+  &_top {
+    text-align: center;
+    &__title {
+      color: $primary-light;
+    }
+    &__text {
+      font-family: $title-fonts;
+      font-style: normal;
+      font-weight: normal;
+      color: $primary-color;
+    }
+    &__comment {
+      font-family: $title-fonts;
+      font-style: normal;
+      font-weight: normal;
+      color: #848E97;
+      text-transform: uppercase;
+    }
+  }
+  &_button {
+   text-align: center;
+    &-download {
+      border: 1px solid $primary-color;
+      margin-inline: auto;
+      &_text {
+        text-decoration: none;
+        color: $primary-light;
+        text-transform: capitalize;
+      }
+    }
+    &-text {
+      font-family: $title-fonts;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 14px;
+      color: $light-text;
+    }
+  }
+}
+
+@media (max-width: 480px){
+ .header {
+   &_navbar {
+     position: relative;
+     padding-inline: 16px;
+     padding-block: 34px 32px;
+     background: $color-bg-top;
+     &__logo {
+     padding-left: 6px;
+       &-picture {
+         &-purple {
+         }
+         &-white {
+           display: none;
+         }
+       }
+     }
+
+     &__button {
+       @include button;
+       &-text {
+         font-size: 15px;
+         line-height: 15px;
+       }
+     }
+     &__burger {
+       @include flex;
+       padding-right: 6px;
+       box-sizing: border-box;
+       align-items: end;
+       flex-direction: column;
+       row-gap: 6px;
+       &-line {
+         width: 26px;
+         height: 3px;
+         border-radius: 2px;
+         background-color: $primary-light;
+         &-short {
+           width: 17px;
+           height: 3px;
+           border-radius: 2px;
+           background-color: $primary-light;
+         }
+       }
+       &-close {
+         position: relative;
+         width: 28px;
+         height: 26px;
+         display: none;
+         &::before, &::after {
+           position: absolute;
+           content: '';
+           width: 32px;
+           height: 2px;
+           background-color: $primary-light;
+           left:0;
+           top:14px;
+         }
+         &::before {
+           transform: rotate(45deg);
+         }
+         &::after {
+           transform: rotate(-45deg);
+         }
+       }
+     }
+     &__menu {
+       &-active {
+         position: absolute;
+         bottom: -326px;
+         left: 50vw;
+         margin-left: -150px;
+         box-sizing: border-box;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         background: $menu-bg;
+         padding-bottom: 14px;
+       }
+
+       &-item {
+         position: relative;
+         box-sizing: border-box;
+         width: 292px;
+         display: inline-block;
+         padding-left: 35px;
+         padding-block: 29px 21px;
+         @include title($font-weight: normal, $font-size: 26px, $line-height: 26px);
+         color: $primary-light;
+         border-bottom: 2px solid $background-line;
+         &::before {
+           content: '';
+           position: absolute;
+           left: 0;
+           top: 19px;
+           width: 8px;
+           height: 43px;
+           background-color: $primary-color;
+           display: none;
+         }
+         &:hover,
+         &:active {
+           padding-left: 38px;
+           color: $primary-color;
+         }
+         &:hover::before,
+         &:active::before {
+           display: block;
+         }
+       }
+     }
+   }
+   &_top {
+     &__title {
+       @include title($line-height: 48px);
+       margin-top: 50px;
+     }
+     &__text {
+       font-size: 18px;
+       line-height: 24px;
+       margin-top: 19px;
+       text-transform: capitalize;
+     }
+     &__comment {
+       font-size: 14px;
+       line-height: 14px;
+       margin-bottom: 406px;
+       margin-top: 14px;
+     }
+   }
+   &_button {
+    transform: translateY(65%);
+     &-download {
+       @include button($width: 290px, $padding-block: 13px);
+       margin-bottom: 12px;
+       margin-inline: auto;
+       &_text {
+         @include title($font-size: 18px, $line-height: 20px);
+         text-decoration: none;
+         color: $primary-light;
+         text-transform: capitalize;
+       }
+     }
+     &-text {
+       font-size: 14px;
+       line-height: 14px;
+     }
+   }
+ }
+}
+@media (min-width: 481px) and (max-width: 992px) {
+  .header {
+    &_navbar {
+      position: relative;
+      @include flex;
+      row-gap: 23px;
+      flex-wrap: wrap;
+      padding-block:22px 18px;
+      margin-inline: 10px;
+      background: $color-bg-top;
+      &__logo {
+        padding-left: 10px;
+        margin-right: auto;
+        &-picture {
+          &-purple {
+          }
+          &-white {
+            display: none;
+          }
+        }
+        &-title {
+          display: block;
+        }
+      }
+      &__button {
+        @include button($width: 145px);
+        margin-right: 10px;
+        &-text {
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+      &__burger {
+        position: absolute;
+        top: -100px;
+        right: -200px;
+        display: none;
+        &-close {
+          position: absolute;
+          top: -100px;
+          right: -200px;
+          display: none;
+        }
+      }
+      &__menu {
+        @include flex;
+        flex-basis: 100%;
+        justify-items: center;
+        padding-inline: calc((100% - 450px) * 0.36);
+
+        &-item {
+          @include title ($font-size: 16px, $line-height: 18px);
+          color: $primary-color;
+        }
+      }
+    }
+    &_top {
+      &__title {
+        @include title($font-size: 72px, $line-height: 72px);
+        margin-top: 68px;
+      }
+      &__text {
+        font-size: 24px;
+        line-height: 24px;
+        margin-top: 19px;
+      }
+      &__comment {
+        font-size: 14px;
+        line-height: 14px;
+        margin-bottom: 470px;
+        margin-top: 19px;
+      }
+    }
+    &_button {
+      transform: translateY(65%);
+      &-download {
+        @include button($width: 390px, $padding-block: 23px);
+        margin-bottom: 18px;
+        &_text {
+          @include title($font-size: 21px, $line-height: 23px);
+        }
+      }
+      &-text {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+@media (min-width: 993px) {
+
+  .header {
+    &_navbar {
+
+      @include flex;
+      flex-basis: 100%;
+      padding-top:29px;
+      margin-inline: calc((100% - 800px) * 0.2);
+      &__logo {
+        margin-left: calc((100% - 800px) * 0.2);
+        margin-right: auto;
+        &-picture {
+          position: relative;
+          overflow: hidden;
+          &-purple{
+            display: block;
+
+          }
+          &-white {
+            position: absolute;
+            top: -50px;
+            left: 0;
+
+            display: block;
+          }
+        }
+        &-title {
+          display: block;
+        }
+      }
+      &__logo:hover &__logo-picture {
+          &-purple {
+          display: block;
+          }
+         &-white {
+            top:0;
+          }
+          }
+      &__logo:hover &__logo{
+        &-title {
+          color:$primary-light;
+        }}
+
+      &__button {
+        @include button($width: 145px);
+     margin-right: calc((100% - 800px) * 0.2);
+        order: 1;
+        &-text {
+          font-size: 16px;
+          line-height: 17px;
+        }
+        &:hover {
+          background: $primary-light;
+        }
+        &:hover &-text {
+          color: $primary-color;
+        }
+      }
+
+      &__burger {
+        display: none;
+        &-close {
+          display: none;
+        }
+      }
+      &__menu {
+        @include flex;
+
+        &-item {
+          @include title ($font-size: 16px, $line-height: 17px);
+          color: $primary-color;
+          margin-right: 47px;
+          &:hover {
+            color: $primary-light;
+
+          }
+        }
+      }
+    }
+    &_top {
+      &__title {
+        @include title($font-size: 82px, $line-height: 82px);
+        margin-top: 112px;
+      }
+      &__text {
+        font-size: 30px;
+        line-height: 30px;
+        margin-top: 19px;
+      }
+      &__comment {
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 457px;
+        margin-top: 19px;
+      }
+    }
+    &_button {
+      transform: translateY(65%);
+      &-download {
+        @include button($width: 390px, $padding-block: 23px);
+        margin-bottom: 19px;
+        &_text {
+          @include title($font-size: 21px, $line-height: 22px);
+        }
+        &:hover {
+          background: $primary-light;
+          border: 2px solid $primary-color;
+        }
+        &:hover &_text{
+          color: $primary-color;
+        }
+      }
+      &-text {
+        font-size: 14px;
+        line-height: 15px;
+      }
+    }
+  }
+}

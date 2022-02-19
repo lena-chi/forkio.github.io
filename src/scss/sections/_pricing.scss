@@ -1,0 +1,209 @@
+.pricing{
+    min-width: 320px;
+    background-image: url(./images/pricing-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top:14px;
+    padding-bottom: 15px;
+    text-align: center;
+
+    @media screen and (min-width:481px) and (max-width:992px){
+        padding-top: 88px;
+        padding-bottom: 94px;        
+    }
+
+    @media screen and (min-width:993px){
+        padding-top: 114px;
+        padding-bottom: 94px;
+    }
+
+    &__title{
+        @include title(bold, 28px, 42px);
+        color: $primary-light;
+        margin-bottom: 32px;
+
+        @media screen and (min-width:481px) and (max-width:992px){
+            @include title(bold, 42px, 44px); 
+            margin-bottom: 39px;
+        }
+
+        @media screen and (min-width:993px) {
+            @include title(bold, 48px, 50px);
+            margin-bottom: 61px; 
+        }
+    }
+
+    // wrapper for card
+
+    &__wrap{        
+        flex-wrap: wrap;
+        transition: all, 0.5s, ease-in-out;
+
+        @media screen and (min-width:481px) and (max-width:992px){
+            max-width:581px;
+            @include flex(center, center); 
+            column-gap: 25px;                    
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width:993px){
+            @include flex(center, center);
+            max-width: 1130px;
+            margin: 0 auto;
+        }
+    }    
+
+    &__card{
+        background-color: rgba(255, 255, 255, 0.11);
+        margin: 0 auto  18px;        
+    }
+
+}
+
+// cards
+
+.pricing-card{
+    width: 257px;
+    text-align: center;    
+    padding-bottom: 36px;
+
+    @media screen and (min-width:481px) and (max-width:992px){
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    // big card
+
+    &--zoom{
+        width: 299px;
+        padding-bottom: 47px;
+        background-color: rgba(70, 48, 72, 0.84);
+
+        @media screen and (min-width:481px) and (max-width:992px){
+            margin-right: 0;
+            margin-left:-20px;
+        }
+    }
+
+    // card-title
+
+    &__title{
+        @include title(normal, 24px, 24px);
+        text-transform: uppercase;
+        background-color: rgba(255, 255, 255, 0.06);
+        color: $primary-light;
+        padding-top: 36px;
+        padding-bottom: 36px;
+        margin-bottom: 30px;
+
+        // big card title
+
+        &--zoom{
+            background-color: rgba(0, 0, 0, 0.11);            
+            padding-top: 43px;
+            padding-bottom: 43px;
+            margin-bottom: 14px;
+        }
+       
+    }
+
+    // card price
+
+    &__price{
+        @include title(bold, 60px, 62px);
+        text-transform: uppercase;
+        color: $primary-light;
+        margin-bottom: 20px;
+
+        @media screen and (min-width:993px){
+            @include title(bold, 60px, 90px);
+        }
+
+        // big card price
+
+        &--zoom{
+            @include title(bold, 82px, 84px);
+            margin-bottom: 16px; 
+
+            @media screen and (min-width:993px){
+                @include title(bold, 82px, 90px);
+            }
+        }
+    }
+
+    // card content
+
+    &__period{
+        @include title(normal, 14px, 16px);
+        text-transform: uppercase;
+        color: $primary-light;
+        margin-bottom: 73px;
+        position: relative;
+
+        &--zoom{
+            margin-bottom: 91px; 
+            position: relative;
+        }
+
+        // line
+
+        &--zoom::after{
+            content:"";           
+            display:none;
+        }
+
+        &--zoom::before{
+            content:"";
+             width: 60px;
+            height: 5px;
+            background-color: #8D81AC;
+            top: 56px;
+            left:120px;        
+            position: absolute;
+        }
+    }
+
+    &__period::after{
+        content:"";
+        width: 60px;
+        height: 5px;
+        background-color: #8D81AC;
+        top: 56px;
+        left:98px;        
+        position: absolute;
+    }
+
+    &__options{
+        @include title(normal, 16px, 18px);
+        color: $primary-light;
+        margin-bottom: 37px;
+
+        // first card
+
+        &--small{
+            margin-bottom: 56px;
+        }
+
+        &--zoom{
+            @include title(normal, 16px, 32px);
+            margin-bottom: 83px;
+        }
+    }
+
+    // card button
+
+    &__button{
+        background-color: rgba(255, 255, 255, 0.15);
+        box-sizing: border-box;
+        padding: 15px 38px;
+        width: 163px;
+        margin: 0 auto;
+        border-radius: 40px;        
+    }
+
+    &__link{
+        @include title(normal, 15px, 15px);
+        text-decoration: none;
+        color: $primary-light;        
+    }
+}
